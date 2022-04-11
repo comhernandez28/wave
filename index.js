@@ -17,5 +17,5 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use('/api/users', userController);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 app.listen(PORT);
