@@ -6,6 +6,7 @@ const Container = styled.div`
 	display: flex;
 	flex: auto;
 	background-color: #f9f9f9;
+	height: 95vh;
 `;
 
 const Views = styled.div`

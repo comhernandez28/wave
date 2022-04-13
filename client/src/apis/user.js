@@ -1,14 +1,17 @@
-import axios from 'axios';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
-export const getUser = async () => {
-	try {
-		const res = await axios({
-			method: 'get',
-			url: '/api/self',
-		});
+export const userApi = createApi({
+	reducerPath: 'userApi',
+	baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:8000/' }),
+	endpoints: (builder) => ({
+	getCurrentUser: builder.query({
+		query: () => {
+			'api/users/self'
+		}
+	}),
+	}),
+  })
+  
+export const { useGetCurrentUserQuery } = userApi
 
-		return res;
-	} catch (error) {
-		console.log(error);
-	}
-};
+//check this: https://redux-toolkit.js.org/tutorials/rtk-query

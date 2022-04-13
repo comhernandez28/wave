@@ -1,16 +1,19 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Profile from './profile/Profile';
+import Profile from '../views/profile/Profile.js';
 import Header from './header/Header';
 import Main from './main/Main';
-import Dashboard from './dashboard/Dashboard';
+import Dashboard from '../views/dashboard/Dashboard';
 import Login from '../views/login/Login';
 
+import { useGetCurrentUserQuery } from '../apis/user.js';
+
 export const App = () => {
+	const { data, error, isLoading } = useGetCurrentUserQuery();
+	console.log(error);
 	return (
 		<>
-			{/* check if user logged in */}
-			{false ? (
+			{error ? (
 				<Login></Login>
 			) : (
 				<>

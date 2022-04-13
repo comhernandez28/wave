@@ -1,12 +1,5 @@
-// const passport = require('passport');
-// const GoogleStrategy = require('passport-google-oauth20').Strategy;
-// const mongoose = require('mongoose');
-// const keys = require('../config/keys');
-//const User = mongoose.model('users');
-
 import passport from 'passport';
 import GoogleStrategy from 'passport-google-oauth20';
-import mongoose from 'mongoose';
 import { keys } from '../config/keys.js';
 import { User } from '../models/User.js';
 
@@ -25,7 +18,7 @@ export default class PassportService {
 			{
 				clientID: keys.googleClientID,
 				clientSecret: keys.googleClientSecret,
-				callbackURL: '/auth/google/callback',
+				callbackURL: '/api/users/auth/google/callback',
 			},
 			async (accessToken, refreshToken, profile, next) => {
 				//profile
