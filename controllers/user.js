@@ -14,6 +14,10 @@ router.get('/', async (req, res) => {
 router.get('/self', (req, res) => {
 	!req.user ? res.send('no user') : res.send(req.user);
 	//return req.user;
+		// if (!req.user) {
+	// 	return false
+	// }
+	//return req.user;
 });
 
 router.get(

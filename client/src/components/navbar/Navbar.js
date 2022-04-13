@@ -5,7 +5,7 @@ import userImg from './user.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse } from '@fortawesome/free-solid-svg-icons';
 
-import { getUser } from '../../apis/user';
+import { useGetCurrentUserQuery } from '../../apis/user';
 
 const Nav = styled.nav`
 	width: 10%;
@@ -35,17 +35,16 @@ const ProfilePic = styled.img`
 function Navbar() {
 	const [user, setUser] = useState(null);
 
-	// useEffect(() => {
-	// 	const getData = async () => {
-	// 		const user = await getUser();
-	// 		setUser(user);
-	// 	};
-	// 	getData();
-	// });
+	const { data, error, isLoading } = useGetCurrentUserQuery();
+	
+
+	useEffect(() => {
+		setUser(data);
+	});
 
 	return (
 		<Nav className='card'>
-			<ProfilePic src={userImg} alt='user' />
+			<ProfilePic src={user.profilePicture} alt='user' />
 			<span>{user ? user.displayName : 'User Name'}</span>
 			<h5>NAVIGATION</h5>
 			<ul>

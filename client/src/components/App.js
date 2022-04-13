@@ -10,14 +10,15 @@ import { useGetCurrentUserQuery } from '../apis/user.js';
 
 export const App = () => {
 	const { data, error, isLoading } = useGetCurrentUserQuery();
-	console.log(error);
+	//const query = useGetCurrentUserQuery();
+	console.log(data);
 	return (
 		<>
 			{error ? (
 				<Login></Login>
 			) : (
 				<>
-					<Header />{' '}
+					<Header />
 					<Main>
 						<Routes>
 							<Route path='/' element={<Dashboard />}></Route>
