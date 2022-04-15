@@ -1,6 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const handleLogout = () => {
+	window.location.href = '/api/users/logout';
+};
+
 const Container = styled.div`
 	width: 100%;
 	background-color: #202020;
@@ -16,6 +20,7 @@ function Header() {
 	return (
 		<Container>
 			<Title>Wave</Title>
+			<button onClick={handleLogout}>Logout</button>
 		</Container>
 	);
 }

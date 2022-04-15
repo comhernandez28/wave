@@ -5,16 +5,19 @@ import Header from './header/Header';
 import Main from './main/Main';
 import Dashboard from '../views/dashboard/Dashboard';
 import Login from '../views/login/Login';
+import Loading from './shared/Loading';
 
 import { useGetCurrentUserQuery } from '../apis/user.js';
 
 export const App = () => {
 	const { data, error, isLoading } = useGetCurrentUserQuery();
-	//const query = useGetCurrentUserQuery();
-	console.log(data);
+	console.log(error);
+
 	return (
 		<>
-			{error ? (
+			{isLoading ? (
+				<Loading></Loading>
+			) : error ? (
 				<Login></Login>
 			) : (
 				<>
