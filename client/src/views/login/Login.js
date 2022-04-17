@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import LoginScene from '../../components/shared/LoginScene';
+import BtnText from '../../components/shared/BtnText';
 
 const Container = styled.div`
 	height: 100vh;
@@ -15,13 +15,19 @@ const LeftContainer = styled.div`
 	display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
+	text-align: left;
 `;
 
 const RightContainer = styled.div`
+	height: 100%;
 	width: 50%;
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow: column-reverse nowrap;
 	align-items: center;
+	//TODO: Replace this lol
+	background-image: url('/login-right.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
 `;
 
 const GoogleButton = styled.button`
@@ -38,15 +44,27 @@ const GoogleButton = styled.button`
 	cursor: pointer;
 `;
 
+const LoginTip = styled.div`
+	width: 90%;
+	height: 200px;
+	border-radius: 5px;
+	background: rgba(255, 255, 255, 0.3);
+	backdrop-filter: blur(4px);
+	color: white;
+	margin-bottom: 20px;
+
+	.tip-content {
+		padding: 20px;
+	}
+
+	.tip-text {
+		padding-left: 20px;
+	}
+`;
+
 const GoogleLogo = styled.img`
 	width: 30px;
 `;
-
-const FormatLoginScene = styled(LoginScene)`
-	height: 100vh;
-`;
-
-const LoginSceneContainer = styled.div``;
 
 const handleLogin = () => {
 	window.location.href = '/api/users/auth/google';
@@ -61,15 +79,24 @@ const Login = () => {
 				<div>
 					<GoogleButton onClick={handleLogin}>
 						<GoogleLogo src='/google-logo.png' alt='google' />
-						<span>Sign in with Google</span>
+						<BtnText color='black'>Sign in with Google</BtnText>
 					</GoogleButton>
 				</div>
+				<p>
+					Don't have a Wave account? <a>Sign up here!</a>
+				</p>
 			</LeftContainer>
 			<RightContainer>
-				Right
-				<LoginSceneContainer>
-					<FormatLoginScene></FormatLoginScene>
-				</LoginSceneContainer>
+				<LoginTip>
+					<div className='tip-content'>
+						<h2>Tip of the Day:</h2>
+						<p className='tip-text'>
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+							interdum iaculis ante. In ut mi scelerisque nunc interdum luctus
+							ac euismod enim. Sed cursus ultrices justo id congue. Ut cursus.
+						</p>
+					</div>
+				</LoginTip>
 			</RightContainer>
 		</Container>
 	);
