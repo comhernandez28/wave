@@ -48,11 +48,7 @@ function Navbar() {
 				<Loading />
 			) : (
 				<Nav className='card'>
-					<ProfilePic
-						src={user.profilePicture}
-						alt='user'
-						referrerpolicy='no-referrer'
-					/>
+					<ProfilePic src={user.profilePicture} alt='user' />
 					<span>{user ? user.displayName : 'User Name'}</span>
 					<h5>NAVIGATION</h5>
 					<ul>
