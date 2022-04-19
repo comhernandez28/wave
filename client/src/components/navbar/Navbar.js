@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Loading from '../shared/Loading';
 import styled from 'styled-components';
-import userImg from './user.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse } from '@fortawesome/free-solid-svg-icons';
 
@@ -15,6 +14,9 @@ const Nav = styled.nav`
 	display: flex;
 	flex-flow: column nowrap;
 	background-color: white;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.3);
+	transition: 0.3s;
+	border-radius: 2%;
 
 	ul {
 		list-style: none;

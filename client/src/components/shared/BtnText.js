@@ -1,13 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Container = styled.span.attrs((props) => ({
-	color: props.color || 'black',
-}))`
+const Container = styled.span`
 	display: inline-block;
 	position: relative;
 	padding-bottom: 2px;
-	color: ${(props) => props.color};
+	color: ${({ theme }) => theme.colors.button.text};
 
 	:after {
 		content: '';
@@ -17,7 +15,7 @@ const Container = styled.span.attrs((props) => ({
 		height: 2px;
 		bottom: 0;
 		left: 0;
-		background-color: ${(props) => props.color};
+		background-color: ${({ theme }) => theme.colors.button.text};
 		transform-origin: bottom right;
 		transition: transform 0.25s ease-out;
 	}
@@ -29,7 +27,7 @@ const Container = styled.span.attrs((props) => ({
 `;
 const BtnText = (props) => {
 	console.log(props);
-	return <Container color={props.color}>{props.children}</Container>;
+	return <Container>{props.children}</Container>;
 };
 
 export default BtnText;

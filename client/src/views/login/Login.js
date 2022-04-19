@@ -79,7 +79,7 @@ const Login = () => {
 				<div>
 					<GoogleButton onClick={handleLogin}>
 						<GoogleLogo src='/google-logo.png' alt='google' />
-						<BtnText color='black'>Sign in with Google</BtnText>
+						<span>Sign in with Google</span>
 					</GoogleButton>
 				</div>
 				<p>

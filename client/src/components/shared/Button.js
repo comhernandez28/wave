@@ -2,16 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import BtnText from './BtnText';
 
-const Container = styled.button.attrs((props) => ({
-	color: props.color || 'black',
-	bg: props.bgColor || 'black',
-}))`
+const ButtonDefault = styled.button`
 	width: 100px;
 	height: 40px;
-	border: 1px solid ${(props) => props.theme.primaryColor};
+	border: 1px solid ${({ theme }) => theme.colors.button.border};
+	background-color: ${({ theme }) => theme.colors.button.background};
+	color: ${({ theme }) => theme.colors.button.text};
 	box-sizing: border-box;
 	border-radius: 4px;
-	background-color: rgba(0, 0, 0, 0);
 	font-weight: bold;
 	display: flex;
 	flex-flow: row nowrap;
@@ -22,9 +20,9 @@ const Container = styled.button.attrs((props) => ({
 
 const Button = (props) => {
 	return (
-		<Container>
-			<BtnText color={props.color}>{props.children}</BtnText>
-		</Container>
+		<ButtonDefault onClick={props.onClick}>
+			<BtnText>{props.children}</BtnText>
+		</ButtonDefault>
 	);
 };
 

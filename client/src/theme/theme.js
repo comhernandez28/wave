@@ -8,14 +8,15 @@ export const theme = {
 				text: '#000000',
 				button: {
 					text: '#FFFFFF',
-					background: '#000000',
+					background: '#2E77D0',
+					border: '#2E77D0',
 				},
 				link: {
-					text: 'teal',
+					text: '#000000',
 					opacity: 1,
 				},
+				header: '#181818',
 			},
-			font: 'Tinos',
 		},
 		seaWave: {
 			id: 'T_007',
@@ -32,7 +33,7 @@ export const theme = {
 					opacity: 0.8,
 				},
 			},
-			font: 'Ubuntu',
+			header: '#9be7ff',
 		},
 	},
 };

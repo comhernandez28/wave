@@ -2,21 +2,24 @@ import React from 'react';
 import styled from 'styled-components';
 import Button from '../shared/Button.js';
 
-const handleLogout = () => {
+const handleLogout = (e) => {
 	window.location.href = '/api/users/logout';
 };
 
 const Container = styled.div`
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	align-items: center;
 	width: 100%;
-	background-color: #202020;
-	padding: 10px 10px;
+	box-sizing: border-box;
+	padding: 10px 15px;
 	//background: linear-gradient(90deg, #005e7c 0%, #083e80 100%);
 	background-image: url('header-wave.svg');
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-color: #388aed;
-	top: calc(50% - 400px / 2);
+	background-color: ${({ theme }) => theme.colors.header};
 `;
 
 const Title = styled.header`
