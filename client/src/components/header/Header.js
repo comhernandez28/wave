@@ -14,7 +14,6 @@ const Container = styled.div`
 	width: 100%;
 	box-sizing: border-box;
 	padding: 10px 15px;
-	//background: linear-gradient(90deg, #005e7c 0%, #083e80 100%);
 	background-image: url('header-wave.svg');
 	background-position: center;
 	background-repeat: no-repeat;

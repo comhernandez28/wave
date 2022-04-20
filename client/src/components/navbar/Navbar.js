@@ -18,9 +18,13 @@ const Nav = styled.nav`
 	transition: 0.3s;
 	border-radius: 2%;
 
+	.nav-title {
+		padding: 0px 15px;
+	}
+
 	ul {
 		list-style: none;
-		padding: 0;
+		padding: 0px 15px;
 		margin-top: 0%;
 	}
 
@@ -31,9 +35,23 @@ const Nav = styled.nav`
 `;
 
 const ProfilePic = styled.img`
-	width: 80px;
+	width: 75px;
+	height: 75px;
 	align-self: center;
 	border-radius: 50%;
+	padding-bottom: 5px;
+`;
+
+const ProfileContainer = styled.div`
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	padding-top: 10px;
+
+	.name {
+		font-weight: bolder;
+		font-size: smaller;
+	}
 `;
 
 function Navbar() {
@@ -50,9 +68,21 @@ function Navbar() {
 				<Loading />
 			) : (
 				<Nav className='card'>
-					<ProfilePic src={user.profilePicture} alt='user' />
-					<span>{user ? user.displayName : 'User Name'}</span>
-					<h5>NAVIGATION</h5>
+					<ProfileContainer>
+						<ProfilePic
+							src={user.profilePicture}
+							alt='user'
+							onError={({ currentTarget }) => {
+								currentTarget.onerror = null; // prevents looping
+								currentTarget.src = 'user-default.png';
+							}}
+						/>
+						<span className='name'>
+							{user ? user.displayName : 'User Name'}
+						</span>
+					</ProfileContainer>
+
+					<h5 className='nav-title'>NAVIGATION</h5>
 					<ul>
 						<li>
 							<FontAwesomeIcon icon={faHouse} /> <Link to={'/'}>Dashboard</Link>
@@ -61,9 +91,9 @@ function Navbar() {
 							<FontAwesomeIcon style={{ paddingRight: '4px' }} icon={faUser} />{' '}
 							<Link to={'/profile'}>Profile</Link>
 						</li>
-						<li>Charts</li>
-						<li>Artists</li>
-						<li>Playlists</li>
+						<li>Charts - coming soon</li>
+						<li>Artists - coming soon</li>
+						<li>Playlists - coming soon</li>
 					</ul>
 				</Nav>
 			)}
