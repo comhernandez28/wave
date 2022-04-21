@@ -5,12 +5,15 @@ import passport from 'passport';
 import { keys } from './config/keys.js';
 import userController from './controllers/user.js';
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI || process.env.mongoURI);
 
 const app = express();
 
 app.use(
-	cookieSession({ maxAge: 30 * 24 * 60 * 60 * 1000, keys: [keys.cookieKey] })
+	cookieSession({
+		maxAge: 30 * 24 * 60 * 60 * 1000,
+		keys: [keys.cookieKey || process.env.cookieKey],
+	})
 );
 
 app.use(passport.initialize());

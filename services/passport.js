@@ -16,8 +16,8 @@ export default class PassportService {
 	useGoogleStrategy = passport.use(
 		new GoogleStrategy(
 			{
-				clientID: keys.googleClientID,
-				clientSecret: keys.googleClientSecret,
+				clientID: keys.googleClientID || process.env.googleClientID,
+				clientSecret: keys.googleClientSecret || process.env.googleClientSecret,
 				callbackURL: '/api/users/auth/google/callback',
 			},
 			async (accessToken, refreshToken, profile, next) => {
