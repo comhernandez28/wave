@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Loading from '../shared/Loading';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser, faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faHouse, faGear } from '@fortawesome/free-solid-svg-icons';
 
 import { useGetCurrentUserQuery } from '../../apis/user';
 
@@ -90,6 +90,10 @@ function Navbar() {
 						<li>
 							<FontAwesomeIcon style={{ paddingRight: '4px' }} icon={faUser} />{' '}
 							<Link to={'/profile'}>Profile</Link>
+						</li>
+						<li>
+							<FontAwesomeIcon style={{ paddingRight: '0px' }} icon={faGear} />{' '}
+							<Link to={'/settings'}>Settings</Link>
 						</li>
 						<li>Charts - coming soon</li>
 						<li>Artists - coming soon</li>
