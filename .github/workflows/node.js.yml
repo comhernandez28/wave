@@ -18,6 +18,13 @@ jobs:
         node-version: [16.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
+    env:
+      SSH_KEY: ${{secrets.SSH_KEY}}
+      ROX_API_KEY: ${{secrets.ROX_API_KEY}}
+      STRIPE_TEST_CLIENT: ${{secrets.STRIPE_TEST_CLIENT}}
+      STRIPE_TEST_CONNECT_ID: ${{secrets.STRIPE_TEST_CONNECT_ID}}
+      STRIPE_TEST_KEY: ${{secrets.STRIPE_TEST_KEY}}
+
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}

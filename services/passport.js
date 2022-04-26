@@ -1,6 +1,5 @@
 import passport from 'passport';
 import GoogleStrategy from 'passport-google-oauth20';
-import { keys } from '../config/keys.js';
 import { User } from '../models/User.js';
 
 export default class PassportService {
@@ -16,8 +15,8 @@ export default class PassportService {
 	useGoogleStrategy = passport.use(
 		new GoogleStrategy(
 			{
-				clientID: keys.googleClientID || process.env.googleClientID,
-				clientSecret: keys.googleClientSecret || process.env.googleClientSecret,
+				clientID: process.env.GOOGLE_CLIENT_ID,
+				clientSecret: process.env.GOOGLE_CLIENT_SECRET,
 				callbackURL: '/api/users/auth/google/callback',
 			},
 			async (accessToken, refreshToken, profile, next) => {
