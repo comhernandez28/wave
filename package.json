@@ -12,9 +12,10 @@
 		"start": "node index.js",
 		"server": "nodemon index.js",
 		"client": "npm run start --prefix client",
+		"install-client": "npm install --prefix client",
 		"dev": "concurrently \"npm run server\" \"npm run client\"",
 		"buildClient": "npm run build --prefix client",
-		"buildApp": "concurrently \"npm run start\" \"npm run buildClient\"",
+		"build": "concurrently \"npm run start\" \"npm run buildClient\"",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Omar Hernandez",
