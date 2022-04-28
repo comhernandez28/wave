@@ -62,6 +62,8 @@ function Navbar() {
 		setUser(data);
 	}, [data, user]);
 
+	console.log(error);
+
 	return (
 		<>
 			{isLoading ? (

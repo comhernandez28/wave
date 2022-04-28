@@ -23,9 +23,10 @@ export const App = () => {
 
 	useEffect(() => {
 		setSelectedTheme(theme);
-	}, [themeLoaded]);
+	}, [themeLoaded, theme]);
 
 	console.log(error);
+	console.log(data);
 
 	return (
 		<>

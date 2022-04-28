@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import BtnText from '../../components/shared/BtnText';
 
 const Container = styled.div`
 	height: 100vh;
@@ -83,7 +82,7 @@ const Login = () => {
 					</GoogleButton>
 				</div>
 				<p>
-					Don't have a Wave account? <a>Sign up here!</a>
+					Don't have a Wave account? <a href='/'>Sign up here!</a>
 				</p>
 			</LeftContainer>
 			<RightContainer>
