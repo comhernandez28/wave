@@ -60,7 +60,7 @@ function Navbar() {
 
 	useEffect(() => {
 		setUser(data);
-	}, []);
+	});
 
 	console.log(error);
 
