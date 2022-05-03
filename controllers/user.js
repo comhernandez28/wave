@@ -13,11 +13,6 @@ router.get('/', async (req, res) => {
 
 router.get('/self', (req, res) => {
 	!req.user ? res.send('no user') : res.send(req.user);
-	//return req.user;
-		// if (!req.user) {
-	// 	return false
-	// }
-	//return req.user;
 });
 
 router.get(
@@ -27,15 +22,18 @@ router.get(
 	})
 );
 
-router.get('/auth/google/callback', passport.authenticate('google', {
-	successRedirect: '/',
-	failureRedirect: '/'
-}));
+router.get(
+	'/auth/google/callback',
+	passport.authenticate('google', {
+		successRedirect: '/',
+		failureRedirect: '/',
+	})
+);
 
 router.get('/logout', (req, res) => {
 	req.logout();
 	delete req.session;
 	res.redirect('/');
-})
+});
 
 export default router;
