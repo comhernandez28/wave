@@ -12,7 +12,12 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/self', (req, res) => {
-	!req.user ? res.send('no user') : res.send(req.user);
+	//!req.user ? res.send({ data: 'no user' }) : res.send(req.user);
+	if (!req.user) {
+		throw new Error('No user');
+	} else {
+		res.send(req.user);
+	}
 });
 
 router.get(

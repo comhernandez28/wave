@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Loading from '../shared/Loading';
 import styled from 'styled-components';
@@ -55,20 +56,17 @@ const ProfileContainer = styled.div`
 `;
 
 function Navbar() {
-	const [user, setUser] = useState({});
-	const { data, error, isLoading } = useGetCurrentUserQuery();
+	const { user } = useSelector((state) => state.user);
 
 	useEffect(() => {
-		setUser(data);
+		console.log('user', user);
 	});
-
-	console.log(error);
-
 	return (
 		<>
-			{isLoading ? (
+			{
+				/* {isLoading ? (
 				<Loading />
-			) : (
+			) : ( */
 				<Nav className='card'>
 					<ProfileContainer>
 						<ProfilePic
@@ -83,7 +81,6 @@ function Navbar() {
 							{user ? user.displayName : 'User Name'}
 						</span>
 					</ProfileContainer>
-
 					<h5 className='nav-title'>NAVIGATION</h5>
 					<ul>
 						<li>
@@ -102,7 +99,7 @@ function Navbar() {
 						<li>Playlists - coming soon</li>
 					</ul>
 				</Nav>
-			)}
+			}
 		</>
 	);
 }

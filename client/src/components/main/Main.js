@@ -19,7 +19,7 @@ function Main(props) {
 	return (
 		<Container>
 			<Navbar></Navbar>
-			<Views>{props.children}</Views>
+			{/* <Views>{props.children}</Views> */}
 		</Container>
 	);
 }

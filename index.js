@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 import cookieSession from 'cookie-session';
 import passport from 'passport';
 import userController from './controllers/user.js';
+import spotifyController from './controllers/spotify.js';
 
 mongoose.connect(process.env.MONGO_URI);
 
@@ -19,6 +20,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use('/api/users', userController);
+app.use('/api/spotify', spotifyController);
 
 const PORT = process.env.PORT || 8000;
 app.listen(PORT);

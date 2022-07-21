@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
+
+import { useGetSpotifyTestQuery } from '../../apis/spotify';
 
 const Container = styled.div`
 	display: flex;
@@ -15,6 +17,16 @@ const Table = styled.table`
 `;
 
 const StatsCard = () => {
+	const { data, error, isLoading } = useGetSpotifyTestQuery();
+	const [test, setTest] = useState('');
+
+	// useEffect(() => {
+	// 	setTest(data);
+	// });
+
+	console.log('test', data);
+	console.log('error', error);
+
 	return (
 		<Container>
 			<Header>StatsCard</Header>

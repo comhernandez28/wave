@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import Profile from '../views/profile/Profile.js';
 import Header from './header/Header';
@@ -14,26 +15,36 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyles } from '../theme/GlobalStyles';
 import { useTheme } from '../hooks/useTheme';
 
+import { store } from '../store/index.js';
 import { useGetCurrentUserQuery } from '../apis/user.js';
+import { useSelector } from 'react-redux';
 
 export const App = () => {
 	const { data, error, isLoading } = useGetCurrentUserQuery();
 	const { theme, themeLoaded } = useTheme();
 	const [selectedTheme, setSelectedTheme] = useState(theme);
+	const dispatch = useDispatch();
 
 	useEffect(() => {
 		setSelectedTheme(theme);
-	}, [themeLoaded, theme]);
+		//TODO: if theres a user setUser
+		//maybe do this
+		if (data) {
+			dispatch({ type: 'user/updateUser', payload: data });
+			//store.dispatch({ type: 'user/updateUser', payload: data });
+		}
 
-	console.log(error);
-	console.log(data);
+		//setUser(data);
+	});
 
 	return (
 		<>
 			{isLoading ? (
 				<Loading></Loading>
 			) : error ? (
-				<Login></Login>
+				<>
+					<Login></Login>
+				</>
 			) : (
 				<>
 					{themeLoaded && (
@@ -46,7 +57,7 @@ export const App = () => {
 									<Route path='/profile' element={<Profile />}></Route>
 									<Route path='/settings' element={<Settings />}></Route>
 								</Routes>
-							</Main>{' '}
+							</Main>
 						</ThemeProvider>
 					)}
 				</>

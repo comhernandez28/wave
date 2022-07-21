@@ -26,7 +26,7 @@ const Container = styled.span`
 	}
 `;
 const BtnText = (props) => {
-	console.log(props);
+	// console.log(props);
 	return <Container>{props.children}</Container>;
 };
 
