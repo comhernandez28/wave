@@ -10,16 +10,18 @@ const Container = styled.div`
 `;
 
 const Views = styled.div`
+	display: flex;
+	flex: auto;
 	width: 80%;
 	border: 2px solid black;
-	margin: 20px 20px;
+	margin: 20px 20px 20px 0px;
 `;
 
 function Main(props) {
 	return (
 		<Container>
 			<Navbar></Navbar>
-			{/* <Views>{props.children}</Views> */}
+			<Views>{props.children}</Views>
 		</Container>
 	);
 }

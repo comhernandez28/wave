@@ -1,9 +1,13 @@
-import React from 'react';
+import { useEffect, React } from 'react';
+import { OnboardCTA } from './OnboardCTA';
 
 function Dashboard() {
 	return (
 		<div>
-			<div>dashboard</div>
+			<div>
+				<h1>Dashboard</h1>
+				<OnboardCTA></OnboardCTA>
+			</div>
 		</div>
 	);
 }
