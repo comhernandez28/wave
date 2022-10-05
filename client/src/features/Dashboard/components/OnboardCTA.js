@@ -13,8 +13,6 @@ export const OnboardCTA = () => {
 			<S.LinkTo to={'/settings'}>
 				<Button color={'white'}>Settings</Button>
 			</S.LinkTo>
-			<S.LinkTo to={'/settings'}>test</S.LinkTo>
-			{/* <Button onClick={onClick}>Settings</Button> */}
 		</S.Container>
 	);
 };
