@@ -1,14 +1,15 @@
 import { useEffect, React } from 'react';
 import { OnboardCTA } from '../components/OnboardCTA';
+import * as S from './Dashboard.style';
 
 function Dashboard() {
 	return (
-		<div>
-			<div>
-				<h1>Dashboard</h1>
+		<S.Container>
+			<S.Header>Dashboard</S.Header>
+			<S.CTAContainer>
 				<OnboardCTA></OnboardCTA>
-			</div>
-		</div>
+			</S.CTAContainer>
+		</S.Container>
 	);
 }
 

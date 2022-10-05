@@ -1,16 +1,20 @@
 import React from 'react';
 import * as S from './OnboardCTA.style';
+import { Link } from 'react-router-dom';
 
 import Button from '../../shared/Button';
 
 export const OnboardCTA = () => {
+	const onClick = () => {};
 	return (
-		<div>
-			<S.Container>
-				<h3>Connect an account to start tracking your journey</h3>
-				<br />
-				<Button>Settings</Button>
-			</S.Container>
-		</div>
+		<S.Container>
+			<h3>Connect an account to start tracking your journey</h3>
+			<br />
+			<S.LinkTo to={'/settings'}>
+				<Button color={'white'}>Settings</Button>
+			</S.LinkTo>
+			<S.LinkTo to={'/settings'}>test</S.LinkTo>
+			{/* <Button onClick={onClick}>Settings</Button> */}
+		</S.Container>
 	);
 };

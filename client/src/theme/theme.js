@@ -36,4 +36,14 @@ export const theme = {
 			header: '#9be7ff',
 		},
 	},
+	colors: {
+		darkGrey: '#404040',
+		lightGrey: '#D9D9D9',
+		creamWhite: '#F8F8F8',
+		red: '#E22134',
+		orange: '#FF9800',
+		yellow: '#FFED51',
+		green: '#1DB954',
+		blue: '2E77D0',
+	},
 };
