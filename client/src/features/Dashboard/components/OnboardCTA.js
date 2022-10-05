@@ -1,7 +1,7 @@
 import React from 'react';
 import * as S from './OnboardCTA.style';
 
-import Button from '../../components/shared/Button';
+import Button from '../../shared/Button';
 
 export const OnboardCTA = () => {
 	return (

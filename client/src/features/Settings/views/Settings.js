@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Card from '../../components/shared/Card';
-import Button from '../../components/shared/Button';
+import Card from '../../shared/Card';
+import Button from '../../shared/Button';
 
 const OAuthContainer = styled.div`
 	display: flex;

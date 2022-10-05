@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from '../shared/Button.js';
+import Button from '../../../shared/Button';
 
 const handleLogout = (e) => {
 	window.location.href = '/api/users/logout';

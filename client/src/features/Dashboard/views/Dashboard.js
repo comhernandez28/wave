@@ -1,5 +1,5 @@
 import { useEffect, React } from 'react';
-import { OnboardCTA } from './OnboardCTA';
+import { OnboardCTA } from '../components/OnboardCTA';
 
 function Dashboard() {
 	return (

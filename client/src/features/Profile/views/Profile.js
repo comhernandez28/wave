@@ -1,6 +1,6 @@
 import React from 'react';
 
-import StatsCard from '../../components/shared/StatsCard';
+import StatsCard from '../../shared/StatsCard';
 
 export default function Profile() {
 	return (

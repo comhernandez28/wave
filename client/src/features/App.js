@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import Profile from '../views/profile/Profile.js';
-import Header from './header/Header';
-import Main from './main/Main';
+import Profile from './Profile/views/Profile.js';
+import Header from './Main/components/header/Header.js';
+import Main from './Main/views/main/Main.js';
 
-import Dashboard from '../views/dashboard/Dashboard';
-import Settings from '../views/settings/Settings.js';
-import Login from '../views/login/Login';
+import Dashboard from './Dashboard/views/Dashboard.js';
+import Settings from './Settings/views/Settings.js';
+import Login from './Auth/components/login/Login';
 
 import Loading from './shared/Loading';
 

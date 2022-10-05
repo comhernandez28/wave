@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Loading from '../shared/Loading';
+import Loading from '../../../shared/Loading';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faHouse, faGear } from '@fortawesome/free-solid-svg-icons';
 
-import { useGetCurrentUserQuery } from '../../apis/user';
+import { useGetCurrentUserQuery } from '../../../../apis/user';
 
 const Nav = styled.nav`
 	width: 15%;
